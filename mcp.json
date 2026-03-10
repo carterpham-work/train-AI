@@ -1,0 +1,86 @@
+{
+  "servers": {
+    "aws-knowledge-mcp": {
+      "type": "http",
+      "url": "https://knowledge-mcp.global.api.aws"
+    },
+    "AWS Pricing MCP Server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-pricing-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "root",
+        "AWS_REGION": "eu-central-1"
+      },
+      "type": "stdio"
+    },
+    "Cost Explorer MCP Server": {
+      "command": "uvx",
+      "args": ["awslabs.cost-explorer-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "root",
+        "AWS_REGION": "eu-central-1",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "type": "stdio"
+    },
+    "AWS Billing and Cost Management MCP Server": {
+      "command": "uvx",
+      "args": ["awslabs.billing-cost-management-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR",
+        "AWS_PROFILE": "root",
+        "AWS_REGION": "eu-central-1"
+      },
+      "type": "stdio"
+    },
+    "AWS IaC MCP Server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-iac-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "root",
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "type": "stdio"
+    },
+    "AWS API MCP Server": {
+      "command": "uvx",
+      "args": ["awslabs.aws-api-mcp-server@latest"],
+      "env": {
+        "AWS_REGION": "eu-central-1"
+      },
+      "type": "stdio"
+    },
+    "atlassian/atlassian-mcp-server": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/sse"
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "grafana": {
+      "command": "mcp-grafana",
+      "args": [],
+      "env": {
+        "GRAFANA_URL": "",
+        "GRAFANA_USERNAME": "",
+        "GRAFANA_PASSWORD": ""
+      },
+      "type": "stdio"
+    },
+    "EKS MCP Server": {
+      "command": "uvx",
+      "args": [
+        "awslabs.eks-mcp-server@latest",
+        "--allow-write",
+        "--allow-sensitive-data-access"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "type": "stdio"
+    }
+  },
+  "inputs": []
+}
